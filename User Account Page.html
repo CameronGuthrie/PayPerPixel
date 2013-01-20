@@ -1,24 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Password Recovery &middot; PayPerPixel</title>
+    <title>USER'S Account &middot; PayPerPixel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="FILL SHIT IN HERE">
     <meta name="author" content="Cameron Guthrie">
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 40px;
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    
+    <style>
+        body {
+        padding-top: 20px;
         padding-bottom: 40px;
         background-color: #f5f5f5;
       }
-
-      .form-signin {
-        max-width: 350px;
+      
+      .hero-unit {
         padding: 19px 29px 29px;
         margin: 0 auto 20px;
         background-color: #fff;
@@ -30,20 +30,19 @@
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
-        margin-bottom: 10px;
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto	;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+      
+   /* Profile Image CSS */
+   .profile-image {
+   	border: 1px solid #000000;
+   	}
+    .profile-image.pull-left {
+      margin-right: 20px;
+    }
+    .profile-image.pull-right {
+      margin-left: 20px;
+    }
+      
+	</style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -51,20 +50,19 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    
-  <!--  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+ <!--   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+ -->
  
-  -->
-  
   </head>
+
 
   <body>
 
- <!-- NAVBAR
+    <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
@@ -78,18 +76,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">PayPerPixel</a>
+            <a class="brand" href="Index.html">PayPerPixel</a>
+ 	    <p class="navbar-text pull-right">
+             Signed in as <a href="#" class="active">Username</a>
+            </p>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed within .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
- 	    <p class="navbar-text pull-right">
-             <a href="Login Form.html" class="navbar-link">Sign in</a> |
-             <a href="#" class="navbar-link">Create Account</a>
-             <!-- "Once Logged in" Signed in as <a href="#" class="navbar-link">Username</a> -->
-            </p>
               <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -110,19 +106,70 @@
 
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-  
 
 
-    <div class="container">
+<div class="row-fluid">
+	<div class="span12">
+    		<div class="hero-unit">
+            	<div class="container">
+					<div class="span12">
+						<div class="row-fluid">
+						
+						<div class="span7">
+							<div class="row-fluid">							
+								<div class="span2">
+        	    					<img class="profile-image pull-left" src="img/profile.png" height="180px" width="180px" />
+            					</div> <!-- /.span -->
+								<div class="span5">
+									<h2>Username</h2> <!-- USERNAME HERE -->
+									<p>Somewhere in the world</p> <!-- Location goes here -->
+								</div> <!-- /.span -->
+							</div><!-- /.row -->
+							
+							<div class="span7">
+								<h3 class="muted">About USERNAME</h3>
+								<p>I am a placeholder and not a real person!</p>
+							</div> <!-- /.span -->
+							
+						</div><!-- /.span -->
+						
+							<div class="span5">
+								<p class="pull-right">
+								<h3 class="muted">Last Online</h3>00:00 | 12/12/2012 <!-- Date and time here -->
+								</p>
+								<p class="pull-right">
+								<h3 class="muted">Number of clicks</h3> 0  <!-- Click count -->
+								</p> <!-- Click count -->
+							</div> <!-- /.span -->
+							
+						</div> <!-- /.row -->
+					</div> <!-- /.span -->
+				<div><!-- /.container -->
+            	
+          	</div> <!-- /.hero-unit -->
+	</div><!-- /.span -->
+</div><!-- /.row -->
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Enter your email</h2>
-        <hr>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <button class="btn btn-large btn-primary" type="submit">Recover password</button>
-        <a class="link-option pull-right" href="Login Form.html">Cancel and go back</a>
 
-    </div> <!-- /container -->
+
+<div class="container">
+
+</div><!-- /.container -->
+
+
+
+
+
+    <div class="container">    
+          <hr class="featurette-divider">
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2012 PayPerPixel, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
 
     <!-- Le javascript
     ================================================== -->
@@ -140,6 +187,8 @@
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
   </body>
 </html>
