@@ -108,6 +108,57 @@
           	</div>
 	</div>
 </div>
+    	<!--	<div class="container-grid"> -->
+          <script>
+
+            function createGrid(size) {
+
+                var ratioW = Math.floor((1000) / size),
+                    ratioH = Math.floor((1000) / size);
+
+                var parent = document.createElement('div');
+                parent.className = 'grid';
+                parent.style.width = (ratioW * size) + 'px';
+                parent.style.height = (ratioH * size) + 'px';
+                parent.usemap = 'gridmap';
+
+                for (var i = 0; i < ratioH; i++) {
+                    for (var p = 0; p < ratioW; p++) {
+                        var cell = document.createElement('div');
+                        cell.style.height = (size - 1) + 'px';
+                        cell.style.width = (size - 1) + 'px';
+                        parent.appendChild(cell);
+                    }
+                }
+
+                document.body.appendChild(parent);
+
+
+
+            var myX, myY, xyOn, myMouseX, myMouseY;
+            xyOn = true;
+            function getXYPosition(e){
+            myMouseX=(e||event).clientX;
+            myMouseY=(e||event).clientY;
+            if (document.documentElement.scrollTop > 0) {
+              myMouseY = myMouseY + document.documentElement.scrollTop;
+            }
+            if (xyOn) {
+              alert("X is " + myMouseX + "\nY is " + myMouseY);
+            }
+            }
+
+            document.onmouseup=getXYPosition;
+
+            }
+
+            createGrid(10);
+
+          
+        
+
+          </script>
+      <!--  </div> -->
 
     <div class="container">
     
