@@ -17,6 +17,16 @@
         padding-bottom: 40px;
         background-color: #f5f5f5;
       }
+
+      .form-userbox {
+                border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
       
       .hero-unit {
         padding: 19px 29px 29px;
@@ -61,6 +71,23 @@
 
 
   <body>
+
+    <!-- Modal for achievements
+    ============================================= -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Gold Rank IV</h3>
+  </div>
+  <div class="modal-body">
+      <center>
+        <img src="img/achievements/gold4_large.png" />
+      </center>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
 
     <!-- NAVBAR
     ================================================== -->
@@ -108,29 +135,34 @@
     </div><!-- /.navbar-wrapper -->
 
 
+
+<!-- TOP row
+=========================================== -->
 <div class="row-fluid">
 	<div class="span12">
     		<div class="hero-unit">
             	<div class="container">
+
 					<div class="span12">
 						<div class="row-fluid">
 						
 						<div class="span7">
+
 							<div class="row-fluid">							
 								<div class="span2">
-        	    					<img class="profile-image pull-left" src="img/profile.png" height="180px" width="180px" />
+        	    					<img class="profile-image pull-left" src="img/blank profile/profile.png" height="180px" width="180px" />
             					</div> <!-- /.span -->
 								<div class="span5">
 									<h2>Username</h2> <!-- USERNAME HERE -->
 									<p>Somewhere in the world</p> <!-- Location goes here -->
 								</div> <!-- /.span -->
-							</div><!-- /.row -->
-							
+							</div><!-- /.row -->		
+
 							<div class="span7">
 								<h3 class="muted">About USERNAME</h3>
 								<p>I am a placeholder and not a real person!</p>
-							</div> <!-- /.span -->
-							
+							</div> <!-- /.span -->	
+
 						</div><!-- /.span -->
 						
 							<div class="span5">
@@ -151,19 +183,154 @@
 </div><!-- /.row -->
 
 
+<!-- middle row for leaderboard and achievements
+=================================================== -->
+<div class="row-fluid">
+  <div class="span12">
+        <div class="hero-unit">
+              <div class="container">
 
-<div class="container">
+          <div class="span12">
+            <div class="row-fluid">
+            
+                <div class="span5">
+                  <h2>Position on Leaderboard</h2> <!-- leaderboard table here showing user, with one user either side -->
+                  <table border="1" cellpadding="5">
+                    <tr>
+                      <th>Position</th>
+                      <th>Name</th>
+                      <th>Clicks</th>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Sum Yung Gai</td>
+                      <td>34000</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Username</td>
+                      <td>33000</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>Bob Smith</td>
+                      <td>30000</td>
+                    </tr>
+                  </table> 
+                </div> <!-- /.span -->
+            
+              <div class="span5">
+                <p class="pull-right">
+                <div class="container">
+                  <h3>Achievements</h3> <!-- Achievement Pane -->
+                  
+<!-- ACHIEVEMENTS GRID LAYOUT THINGY
+  =================================== -->
 
-</div><!-- /.container -->
+                    <div class="row-fluid">
+                        <div class="span1">
+                          <!-- trigger for modal -->
+                          <a href="#myModal" data-toggle="modal">
+                            <img src="img/achievements/gold4.png" />
+                          </a>
+                        </div> <!-- /.span -->
+                        <div class="span1">
+                          <!-- trigger for modal -->
+                          <a href="#myModal" data-toggle="modal">
+                            <img src="img/achievements/gold4.png" />
+                          </a>
+                        </div> <!-- /.span -->
+                        <div class="span1">
+                          <!-- trigger for modal -->
+                          <a href="#myModal" data-toggle="modal">
+                            <img src="img/achievements/gold4.png" />
+                          </a>
+                        </div> <!-- /.span -->
+                        <div class="span1">
+                          <!-- trigger for modal -->
+                          <a href="#myModal" data-toggle="modal">
+                            <img src="img/achievements/gold4.png" />
+                          </a>
+                        </div> <!-- /.span -->
+                        <div class="span1">
+                          <!-- trigger for modal -->
+                          <a href="#myModal" data-toggle="modal">
+                            <img src="img/achievements/gold4.png" />
+                          </a>
+                        </div> <!-- /.span -->
+                    </div> <!-- /.row -->
+
+<!-- end of layout thingy
+  ================================== -->
+
+                </div><!-- /.container -->
+                </p>
+                </p> <!-- Click count -->
+              </div> <!-- /.span -->
+              
+            </div> <!-- /.row -->
+          </div> <!-- /.span -->
+        <div><!-- /.container -->
+              
+            </div> <!-- /.hero-unit -->
+  </div><!-- /.span -->
+</div><!-- /.row -->            
+
+
+<hr class="featurette-divider">
+
+
+<!-- Row that only the account owner can see/edit
+=================================================== -->
+<div class="row-fluid">
+  <div class="span12">
+        <div class="hero-unit">
+          <div class="container">
+            <div class="row-fluid">
+              <div class="span4">
+                <h2 class="muted">Email</h2>
+                <p>
+                  <form class="userbox">
+                    <input type="text" class="input-block-level" placeholder="email@somewebsite.com">
+                    <button class="btn btn-large btn-primary" type="submit">Update</button>
+                  </form>
+                </p>
+              </div><!-- /.span -->
+              <div class="span4">
+                <h2 class="muted">Date of birth</h2>
+                <p>
+                  <form class="userbox">
+                    <input type="text" class="input-block-level" placeholder="1st January 1990">
+                    <button class="btn btn-large btn-primary" type="submit">Update</button>
+                  </form>
+                </p>
+              </div><!-- /.span -->
+              <div class="span4">
+                <h2 class="muted">New Password</h2>
+                <p>
+                  <form class="userbox">
+                    <input type="text" class="input-block-level" placeholder="old password">
+                    <input type="text" class="input-block-level" placeholder="new password">
+                    <input type="text" class="input-block-level" placeholder="re-enter new password">
+                    <button class="btn btn-large btn-primary" type="submit">Update</button>
+                  </form>
+                </p>
+              </div><!-- /.span -->
+            </div><!-- /.row -->
+          </div><!-- /.container -->
+        </div><!-- /.hero-unit -->
+  </div><!-- /.span -->
+</div><!-- /.row -->
 
 
 
 
 
-    <div class="container">    
+        
           
 
       <!-- FOOTER -->
+      <div class="container">
       <footer>
         <hr class="featurette-divider">
         <p class="pull-right"><a href="#">Back to top</a></p>
