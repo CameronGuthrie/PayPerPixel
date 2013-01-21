@@ -18,9 +18,12 @@
         background-color: #f5f5f5;
       }
 
-      .form-leaderboard {
-        min-width: 600px;
-        max-width: 600px;
+      textarea{
+        resize:none;
+      }
+
+      .form-signin {
+        max-width: 350px;
         padding: 19px 29px 39px;
         margin: 0 auto 20px;
         background-color: #fff;
@@ -32,55 +35,42 @@
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .form-leaderboard .form-leaderboard-heading,
-      .form-leaderboard .checkbox {
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
         margin-bottom: 10px;
       }
-      .form-leaderboard input[type="text"]{
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
         font-size: 16px;
         height: auto	;
         margin-bottom: 15px;
         padding: 7px 9px;
       }
-
-      .form-leaderboard .btn {
-        font-size: 21px;
-        padding:14px 24px;
-        margin-right: 5px;
-        margin-top: -8px;
-      }
-
-      .leaderboard-text{
-        font-size: 20px;
-        height: auto  ;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-
-      .input-username {
-        max-width: 460px;
+      .input-block-about {
         display: block;
         width: 100%;
+        min-height: 90px;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+     .input-block-daymonth {
+        display: block;
+        max-width: 50px;
         min-height: 30px;
         -webkit-box-sizing: border-box;
            -moz-box-sizing: border-box;
                 box-sizing: border-box;
-        }
-
-      /* Big as welcome message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
       }
 
+     .input-block-year {
+        display: block;
+        max-width: 60px;
+        min-height: 30px;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
     </style>
     
 
@@ -119,14 +109,14 @@
             <a class="brand" href="Index.html">PayPerPixel</a>
       <p class="navbar-text pull-right">
              <a href="login_form.html" class="navbar-link">Sign in</a> |
-             <a href="new_account.html" class="active">New Account</a>
+             <a href="#" class="active">New Account</a>
              <!-- "Once Logged in" Signed in as <a href="#" class="navbar-link">Username</a> -->
             </p>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed within .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                <li class="active"><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
                 <li><a href="webstats.html">Webstats</a></li>
                 <li><a href="pixel_history.html">Pixel History</a></li>
               </ul>
@@ -139,17 +129,43 @@
   
 
     <div class="container">
-      <div class="jumbotron">
-      <form class="form-leaderboard">
-        <h1>Welcome to 'insert name here'!</h1>
-        <p class="lead">To create an account click the button below, or login with Facebook.</p>
-        <center>
-          <a href="#"><img height="60" width="60" src="img/new_account/facebook.png" /></a>
-        </center>
-        <br>
-        <a class="btn btn-large btn-success" href="new_account_form.html">Create an account</a>
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+        <hr>
+        <p>First Name</p>
+        <input type="text" class="input-block-level" placeholder="enter first name">
+        <p>Last Name</p>
+        <input type="text" class="input-block-level" placeholder="enter last name">
+        <hr>
+        <p>Date of birth (dd/mm/yyy)</p>
+        <input type="text" class="input-block-daymonth" maxlength="2" placeholder="dd">
+        <input type="text" class="input-block-daymonth" maxlength="2" placeholder="mm">
+        <input type="text" class="input-block-year" maxlength="4" placeholder="yyyy">
+        <hr>
+        <p>Where are you?</p>
+        <input type="text" class="input-block-level" placeholder="Location">
+        <hr>
+        <p>About You</p>
+        <textarea cols="300" wrap="hard" class="input-block-about" placeholder="about you"></textarea>
+        <hr>
+        <p>Enter Email Address</p>
+        <input type="text" class="input-block-level" placeholder="enter email address">
+        <p>Re-Enter Email Address</p>
+        <input type="text" class="input-block-level" placeholder="re-enter email address">
+        <hr>
+        <p>Enter Password</p>
+        <input type="password" class="input-block-level" placeholder="enter password">
+        <p>Re-Enter Password</p>
+        <input type="password" class="input-block-level" placeholder="re-enter password">
+        <hr>
+        <label class="checkbox">
+          <input type="checkbox" value="agree-terms">Do you agree to the <a href="terms.html">Terms and Conditions</a>? 
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Create account</button>
+      
       </form>
-</div><!-- JUMBOTRON -->
+
     </div> <!-- /container -->
 
     <!-- FOOTER -->
