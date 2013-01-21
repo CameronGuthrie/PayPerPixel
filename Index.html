@@ -11,6 +11,9 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le random script for mouseover -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
     
     <style>
         body {
@@ -53,8 +56,51 @@
         border-width: 1px 0 0 1px;
         float: left;
       }
+
+      #tooltip { 
+        text-align:center; 
+        background:black; 
+        color:white; 
+        padding:3px 0; 
+        width:60px; 
+        position:fixed; 
+        display:none; 
+        white-space:nowrap; 
+      }
       
 	</style>
+
+       <!-- Coordinate Script for Mouse (use "coords" in class tag)
+    ============================================================= -->
+ <script type="text/javascript">
+  //<![CDATA[
+  $(window).load(function(){
+    var tooltip = $( '<div id="tooltip">' ).appendTo( 'body' )[0];
+    
+    $( '.coords' ).    
+    each(function () {       
+      var pos = $( this ).position(),
+          top = pos.top,           
+          left = pos.left,          
+          width = $( this ).width(),  
+          height = $( this ).height();       
+                    
+                              $( this ).
+                              mousemove(function ( e ) {
+                                var x = ( ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) / 10 ).toFixed( 0 ),
+                                    y = ( ( height - ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) / 10 ).toFixed( 0 );
+
+                      $( tooltip ).text( x + ', ' + y ).css({                    
+                        left: e.clientX + 20,                    
+                        top: e.clientY + 10                
+                      }).show();            
+                    }).            
+                    mouseleave(function () {                
+                       $( tooltip ).hide();            
+                    });     
+    });    
+  });//]]> 
+</script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -73,6 +119,7 @@
 
 
   <body>
+
 
     <!-- NAVBAR
     ================================================== -->
@@ -130,14 +177,14 @@
                     ratioH = Math.floor((1000) / size);
 
                 var parent = document.createElement('div');
-                parent.className = 'grid';
+                parent.className = 'grid coords';
                 parent.style.width = (ratioW * size) + 'px';
                 parent.style.height = (ratioH * size) + 'px';
                 parent.usemap = 'gridmap';
 
                 for (var i = 0; i < ratioH; i++) {
                     for (var p = 0; p < ratioW; p++) {
-                        var cell = document.createElement('div');
+                        var cell = document.createElement('div')
                         cell.style.height = (size - 1) + 'px';
                         cell.style.width = (size - 1) + 'px';
                         parent.appendChild(cell);
@@ -146,39 +193,18 @@
 
                 document.body.appendChild(parent);
 
-
-
-            var myX, myY, xyOn, myMouseX, myMouseY;
-            xyOn = true;
-            function getXYPosition(e){
-            myMouseX=(e||event).clientX;
-            myMouseY=(e||event).clientY;
-            if (document.documentElement.scrollTop > 0) {
-              myMouseY = myMouseY + document.documentElement.scrollTop;
-            }
-            if (xyOn) {
-              alert("X is " + myMouseX + "\nY is " + myMouseY);
-            }
-            }
-
-            document.onmouseup=getXYPosition;
-
             }
 
             createGrid(10);
-
-          
-        
 
           </script>
       <!--  </div> -->
 
     <div class="container">
-    
-          <hr class="featurette-divider">
 
-      <!-- FOOTER -->
+    <!-- FOOTER -->
       <footer>
+        <hr class="featurette-divider">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2012 PayPerPixel, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
@@ -201,7 +227,7 @@
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	  <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
   </body>
