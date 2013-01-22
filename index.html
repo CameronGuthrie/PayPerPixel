@@ -34,15 +34,6 @@
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .container-grid {
-        top: 10%;
-        background-color: #28ACF9;
-        height: 1000px;
-        width: 1000px;
-        padding: 19px 29px 29px;
-        margin: 0px auto auto;
-        border:1px solid #000000; 
-      }
 
       .navbar .brand-active{
         display: block;
@@ -57,14 +48,22 @@
 
       .grid {
         margin: 0px auto auto;
-        border: 1px solid #ccc;
+        border: 1px solid #000;
         border-width: 0 1px 1px 0;
         background-color: #28ACF9;
       }
 
       .grid div {
-        border: 1px solid #ccc;
+        border: 1px solid #000;
         border-width: 1px 0 0 1px;
+        float: left;
+      }
+
+      .gridprime {
+        margin-top: 50px ;
+        margin-left: 50px;
+        border: 1px solid #000;
+        background-color: #FFFF33;
         float: left;
       }
 
@@ -76,7 +75,8 @@
         width:100px; 
         position:fixed; 
         display:none; 
-        white-space:nowrap; 
+        white-space:nowrap;
+        z-index:3; 
       }
       
 	</style>
@@ -99,7 +99,7 @@
                               $( this ).
                               mousemove(function ( e ) {
                                 var x =  ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) .toFixed( 0 ),
-                                    y =  ( height - ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
+                                    y =  ( ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
 
                       $( tooltip ).text( x + ', ' + y ).css({                    
                         left: e.clientX + 20,                    
@@ -168,46 +168,48 @@
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
     
-    	<!--	<div class="container-grid"> -->
-
-
-
+    
       <!-- THE GRID
       ===================================================== -->
-          <script>
+          <script type="text/javascript">
 
-            function createGrid(size) {
+            function creategrid(size){
+  
+              var primeW = Math.floor((900) / size),
+                  primeH = Math.floor((600) / size),
+                  standardW = Math.floor((1000) / size),
+                  standardH = Math.floor((1000) / size);
 
-                var ratioW = Math.floor((1000) / size),
-                    ratioH = Math.floor((1000) / size);
+              var standard = document.createElement('div');
+                  standard.className = 'grid coords';
+                  standard.style.width = (standardW * size) + 'px';
+                  standard.style.height = (standardH * size) + 'px';
 
-                var parent = document.createElement('div');
-                parent.className = 'grid coords';
-                parent.style.width = (ratioW * size) + 'px';
-                parent.style.height = (ratioH * size) + 'px';
-                parent.usemap = 'gridmap';
+              var prime = document.createElement('div');
+                  prime.className = 'gridprime';
+                  prime.style.width = (primeW * size) + 'px';
+                  prime.style.height = (primeH * size)+ 'px';
+                  prime.style.position = 'absolute'
+                  prime.style.zIndex= '1';
+                  standard.appendChild(prime);
 
-                for (var i = 0; i < ratioH; i++) {
-                    for (var p = 0; p < ratioW; p++) {
-                        var cell = document.createElement('div')
-                        cell.style.height = (size - 1) + 'px';
-                        cell.style.width = (size - 1) + 'px';
-                        parent.appendChild(cell);
+                for (var i = 0; i < standardH; i++) {
+                    for (var p = 0; p < standardW; p++) {
+                      var cell = document.createElement('div');
+                          cell.style.height = (size - 1) + 'px';
+                          cell.style.width = (size - 1) + 'px';
+                          cell.style.position = 'relative'
+                          cell.style.zIndex= '2';
+                          standard.appendChild(cell);
                     }
                 }
 
-                document.body.appendChild(parent);
-
+              document.body.appendChild(standard);
             }
 
-            createGrid(10);
+            creategrid(10);
 
           </script>
-
-
-
-          
-      <!--  </div> -->
 
     
 
