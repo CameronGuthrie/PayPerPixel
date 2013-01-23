@@ -3,7 +3,7 @@
   <head>
 
     <meta charset="utf-8">
-    <title>Index &middot; PayPerPixel</title>
+    <title>Home &middot; PayPerPixel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FILL SHIT IN HERE">
     <meta name="author" content="Cameron Guthrie">
@@ -72,7 +72,7 @@
         background:black; 
         color:white; 
         padding:3px 0; 
-        width:100px; 
+        width:150px; 
         position:fixed; 
         display:none; 
         white-space:nowrap;
@@ -101,10 +101,21 @@
                                 var x =  ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) .toFixed( 0 ),
                                     y =  ( ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
 
-                      $( tooltip ).text( x + ', ' + y ).css({                    
+if ( x > 49 && x < 951 && y > 49 && y < 651) {
+    $( tooltip ).text( 'prime | ' + x + ', ' + y ).css({                    
                         left: e.clientX + 20,                    
                         top: e.clientY + 10                
-                      }).show();            
+    }).show();
+}
+
+else {
+                      $( tooltip ).text( 'standard | ' + x + ', ' + y ).css({                    
+                        left: e.clientX + 20,                    
+                        top: e.clientY + 10                
+                      }).show();
+ 
+}
+
                     }).            
                     mouseleave(function () {                
                        $( tooltip ).hide();            
@@ -160,6 +171,24 @@
                 <li><a href="webstats.html">Webstats</a></li>
                 <li><a href="pixel_history.html">Pixel History</a></li>
                 <li><a href="achievements.html">Achievement List</a></li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Raffle<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                    <li><a href="raffles_now.html">Current Raffle</a></li>
+                    <li><a href="raffles_future.html">Next Raffle</a></li>
+                    <li><a href="raffles_past.html">Raffle History</a></li>
+                    
+                    <li class="divider"></li>
+
+                    <li class="nav-header">Info</li>
+                    <li><a href="#">How to Raffle</a></li>
+                    <li><a href="raffles_prizes.html">Prizes</a></li>
+
+                  </ul>
+                </li>
+
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->

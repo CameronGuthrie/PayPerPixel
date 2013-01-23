@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Next Raffle &middot; PayPerPixel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FILL SHIT IN HERE">
+    <meta name="author" content="Cameron Guthrie">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jbclock.css" type="text/css" media="all" />
+    
+    <style>
+        body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      
+      .hero-unit {
+        padding: 19px 29px 29px;
+        max-width: auto;
+        margin: 0px auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+
+    .jumbotron {
+      margin: 40px 0;
+      text-align: center;
+    }
+    .jumbotron h1 {
+      font-size: 72px;
+      line-height: 1;
+    }
+    .mysterybox{
+      margin-top: -50px;
+      position: relative;
+      z-index: 1;
+    }
+    .overimage{
+      position: relative;
+      z-index: 2;
+    }
+      
+	</style>
+
+  <!-- CLOCK SCRIPTS AND SHIZZ
+  ============================== -->
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="js/jbclock.js"></script>
+                
+                <script type="text/javascript">
+
+            $(document).ready(function(){
+                JBCountDown({
+                    secondsColor : "#ffdc50",
+                    secondsGlow  : "none",
+                    
+                    minutesColor : "#9cdb7d",
+                    minutesGlow  : "none",
+                    
+                    hoursColor   : "#378cff",
+                    hoursGlow    : "none",
+                    
+                    daysColor    : "#ff6565",
+                    daysGlow     : "none",
+
+                    <!-- math for clock populated here-->
+
+                    startDate   : "1357034400",
+                    endDate     : "1362736800",
+                    now         : "1358925676",
+                    seconds     : "16"
+                });
+            });
+        </script>
+
+  </head>
+
+
+  <body>
+
+       <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="Index.html">PayPerPixel</a>
+      <p class="navbar-text pull-right">
+             <a href="login_form.html" class="navbar-link">Sign in</a> |
+             <a href="new_account.html" class="navbar-link">New Account</a>
+             <!-- "Once Logged in" Signed in as <a href="#" class="navbar-link">Username</a> -->
+            </p>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed within .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="webstats.html">Webstats</a></li>
+                <li><a href="pixel_history.html">Pixel History</a></li>
+                <li><a href="achievements.html">Achievement List</a></li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Raffle<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                    <li><a href="raffles_now.html">Current Raffle</a></li>
+                    <li class="active"><a href="raffles_future.html">Next Raffle</a></li>
+                    <li><a href="raffles_past.html">Raffle History</a></li>
+                    
+                    <li class="divider"></li>
+
+                    <li class="nav-header">Info</li>
+                    <li><a href="#">How to Raffle</a></li>
+                    <li><a href="raffles_prizes.html">Prizes</a></li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+<script type="text/javascript">
+if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","beacon-1.newrelic.com","fcf8d519de","13909,933593,716468","dA4NFkNbVV1URBcMRVIMTAREWFVuQlVKAFRZPhMQVEJQVEY=",10,28,new Date().getTime(),"","","","",""]);
+</script>
+
+<div class="container-fluid">
+ <div class="row-fluid">
+	<div class="span12">
+      <div class="hero-unit">
+    		<div class="jumbotron">
+
+        	    <h1>Big Prize</h1>
+            	<p class="overimage">The next raffle's big prize is a <a href="#">Mystery Box</a>!</p>
+          	  <img class="mysterybox" src="img/raffle/mysterybox.png" height="300" width="300" />
+              <hr class="featurette-divider">
+
+	       <div class="row-fluid">
+    
+          	<div class="span6">
+          		<a class="pull-left" href="#">
+                <img src="img/raffle/goldcoinx50.png" height="150" width="150" />
+             </a>
+          		<h2>Great Giveaway</h2>
+          		<p>A great giveaway in the next raffle is 50 Gold Coins! Ten lucky users can win this prize!</p>
+            </div>
+
+          	<div class="span6">
+          		<img src="img/raffle/goldcoinx10.png" height="100" width="100" />
+          		<h2 class="muted">Mini Maddness</h2>
+          		<p>The prize may be mini, but 100 of you can win 10 Gold Coins in the next raffle!</p>
+            </div>
+
+          </div> <!-- /.row-fluid -->
+        </div> <!-- /.jumbotron -->
+     </div> <!-- /.hero-unit -->
+    
+	</div>
+	</div>
+</div>
+</div>
+
+<!-- COUNTDOWN CLOCK
+  ==================================== -->
+       <div class="container-fluid">
+
+        <div class="hero-unit">
+
+          <div class="wrapper">
+
+            <div class="clock">
+
+                  <div class="clock_days">
+                      <canvas id="canvas_days" height="190px" width="190px" id="canvas_days"></canvas>
+                      <div class="text">
+                          <p class="val">0</p>
+                          <p class="type_days">Days</p>
+                      </div>
+                  </div>
+                  <div class="clock_hours">
+                      <canvas height="190px" width="190px" id="canvas_hours"></canvas>
+                      <div class="text">
+                          <p class="val">0</p>
+                          <p class="type_hours">Hours</p>
+                      </div>
+                  </div>
+                  <div class="clock_minutes">
+                      <canvas height="190px" width="190px" id="canvas_minutes"></canvas>
+                      <div class="text">
+                          <p class="val">0</p>
+                          <p class="type_minutes">Minutes</p>
+                      </div>
+                  </div>
+                  <div class="clock_seconds">
+                      <canvas height="190px" width="190px" id="canvas_seconds"></canvas>
+                      <div class="text">
+                          <p class="val">0</p>
+                          <p class="type_seconds">Seconds</p>
+                      </div>
+                  </div>
+                  
+            </div><!-- /.clock -->
+
+          </div> <!-- /.wrapper -->
+
+        </div><!-- /.hero-unit -->
+
+      </div><!-- /.container-fluid -->
+  <!-- ========================================== -->
+
+
+
+
+    <!-- FOOTER -->
+    <div class="container">
+      <footer>
+        <hr class="featurette-divider">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2012 PayPerPixel, Inc. &middot; 
+          <a href="privacy.html">Privacy</a> &middot; 
+          <a href="terms.html">Terms</a>  &middot; 
+          <a href="about.html">About</a> &middot; 
+          <a href="contact.html">Contact</a>
+        </p>
+      </footer>
+    </div><!-- /.container -->
+      
+</div><!-- /.container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+	  <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js"></script>
+    <script type="text/javascript" src="http://beacon-1.newrelic.com/1/fcf8d519de?a=13909,933593,716468&amp;be=1542&amp;qt=10&amp;ap=28&amp;dc=20&amp;fe=2081&amp;to=dA4NFkNbVV1URBcMRVIMTAREWFVuQlVKAFRZPhMQVEJQVEY%3D&amp;v=40&amp;jsonp=NREUM.setToken&amp;perf=%7B%22timing%22%3A%7B%22of%22%3A1358924420245%2C%20%22n%22%3A0%2C%20%22dl%22%3A1191%2C%20%22di%22%3A1562%2C%20%22ds%22%3A1562%2C%20%22de%22%3A1573%2C%20%22dc%22%3A3622%2C%20%22l%22%3A3622%2C%20%22le%22%3A3624%2C%20%22f%22%3A1028%2C%20%22dn%22%3A1028%2C%20%22dne%22%3A1028%2C%20%22c%22%3A1028%2C%20%22ce%22%3A1028%2C%20%22rq%22%3A1033%2C%20%22rp%22%3A1188%2C%20%22rpe%22%3A1203%7D%2C%20%22navigation%22%3A%7B%7D%7D"></script>
+
+  </body>
+</html>

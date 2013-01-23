@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>New Account &middot; PayPerPixel</title>
+    <title>Raffle History &middot; PayPerPixel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="FILL SHIT IN HERE">
     <meta name="author" content="Cameron Guthrie">
 
     <!-- Le styles -->
@@ -12,18 +12,28 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     
     <style>
-      body {
+        body {
         padding-top: 20px;
         padding-bottom: 40px;
         background-color: #f5f5f5;
       }
-
-      textarea{
-        resize:none;
+      
+      .hero-unit {
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
 
-      .form-signin {
-        max-width: 350px;
+      .form-raffhist {
+        min-width: 600px;
+        max-width: 600px;
         padding: 19px 29px 39px;
         margin: 0 auto 20px;
         background-color: #fff;
@@ -35,44 +45,45 @@
            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
                 box-shadow: 0 1px 2px rgba(0,0,0,.05);
       }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
+      .form-raffhist .form-raffhist-heading,
+      .form-raffhist .checkbox {
         margin-bottom: 10px;
       }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto	;
+
+      .raffhist-text-active{
+        font-size: 20px;
+        height: auto  ;
         margin-bottom: 15px;
         padding: 7px 9px;
       }
-      .input-block-about {
-        display: block;
-        width: 100%;
-        min-height: 90px;
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-      }
-     .input-block-daymonth {
-        display: block;
-        max-width: 50px;
-        min-height: 30px;
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
+
+      .raffhist-text-inactive{
+        font-size: 20px;
+        height: auto  ;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+        color: #CCCCCC;
       }
 
-     .input-block-year {
-        display: block;
-        max-width: 60px;
-        min-height: 30px;
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-      }
-    </style>
-    
+    .jumbotron {
+      margin: 60px 0;
+      text-align: center;
+    }
+    .jumbotron h1 {
+      font-size: 72px;
+      line-height: 1;
+    }
+    .mysterybox{
+      margin-top: -50px;
+      position: relative;
+      z-index: 1;
+    }
+    .overimage{
+      position: relative;
+      z-index: 2;
+    }
+      
+	</style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -80,19 +91,19 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+ <!--   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
-  -->
-  
+ -->
+ 
   </head>
 
+
   <body>
-  
-  
-    <!-- NAVBAR
+
+       <!-- NAVBAR
     ================================================== -->
     <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
@@ -109,13 +120,13 @@
             <a class="brand" href="Index.html">PayPerPixel</a>
       <p class="navbar-text pull-right">
              <a href="login_form.html" class="navbar-link">Sign in</a> |
-             <a href="#" class="active">New Account</a>
+             <a href="new_account.html" class="navbar-link">New Account</a>
              <!-- "Once Logged in" Signed in as <a href="#" class="navbar-link">Username</a> -->
             </p>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed within .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                
                 <li><a href="leaderboard.html">Leaderboard</a></li>
                 <li><a href="webstats.html">Webstats</a></li>
                 <li><a href="pixel_history.html">Pixel History</a></li>
@@ -127,7 +138,7 @@
 
                     <li><a href="raffles_now.html">Current Raffle</a></li>
                     <li><a href="raffles_future.html">Next Raffle</a></li>
-                    <li><a href="raffles_past.html">Raffle History</a></li>
+                    <li class="active"><a href="raffles_past.html">Raffle History</a></li>
                     
                     <li class="divider"></li>
 
@@ -145,62 +156,44 @@
 
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-  
 
-    <div class="container">
+    <div class="container-fluid">
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Create your account</h2>
+      <form class="form-raffhist">
+        <h2 class="form-raffhist-heading">Raffle History</h2>
         <hr>
-        <p>Username</p>
-        <input type="text" class="input-block-level" placeholder="enter username">
-        <hr>
-        <p>First Name</p>
-        <input type="text" class="input-block-level" placeholder="enter first name">
-        <p>Last Name</p>
-        <input type="text" class="input-block-level" placeholder="enter last name">
-        <hr>
-            <fieldset>          
-        <div class="control-group">
-            <label class="control-label">Gender</label>
-        <div class="controls">
-            <select>
-                <option value="m">Male</option>
-                <option value="f">Female</option>
-            </select>
-        </div>
-        </div>
-    </fieldset>
-        <hr>
-        <p>Date of birth (dd/mm/yyy)</p>
-        <input type="text" class="input-block-daymonth" maxlength="2" placeholder="dd">
-        <input type="text" class="input-block-daymonth" maxlength="2" placeholder="mm">
-        <input type="text" class="input-block-year" maxlength="4" placeholder="yyyy">
-        <hr>
-        <p>Where are you?</p>
-        <input type="text" class="input-block-level" placeholder="Location">
-        <hr>
-        <p>About You</p>
-        <textarea cols="300" wrap="hard" class="input-block-about" placeholder="about you"></textarea>
-        <hr>
-        <p>Enter Email Address</p>
-        <input type="text" class="input-block-level" placeholder="enter email address">
-        <p>Re-Enter Email Address</p>
-        <input type="text" class="input-block-level" placeholder="re-enter email address">
-        <hr>
-        <p>Enter Password</p>
-        <input type="password" class="input-block-level" placeholder="enter password">
-        <p>Re-Enter Password</p>
-        <input type="password" class="input-block-level" placeholder="re-enter password">
-        <hr>
-        <label class="checkbox">
-          <input type="checkbox" value="agree-terms">Do you agree to the <a href="terms.html">Terms and Conditions</a>? 
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Create account</button>
-      
+        <center>
+          <table border="1" cellpadding="5">
+            <tr class="raffhist-text-active">
+              <th>Date of Raffle</th>
+              <th>Winner</th>
+              <th>Prize</th>
+            </tr>
+            <tr class="raffhist-text-active">
+              <td>12/12/2012</td>
+              <td><a href="#">username</a></td>
+              <td>50 Gold Coins</td>
+            </tr>
+            <tr class="raffhist-text-active">
+              <td>12/12/2012</td>
+              <td><a href="#">Sum Yung Gai</a></td>
+              <td>10 Gold Coins</td>
+            </tr>
+            <tr class="raffhist-text-active">
+              <td>12/12/2012</td>
+              <td><a href="#">Harry</a></td>
+              <td>Mystery Box</td>
+              <tr class="raffhist-text-inactive">
+              <td>05/06/2012</td>
+              <td><a href="#">Old Raffle Winner</a></td>
+              <td>a prize</td>
+            </tr>
+          </table> 
+        </center>
       </form>
 
-    </div> <!-- /container -->
+
+
 
     <!-- FOOTER -->
     <div class="container">
@@ -215,6 +208,8 @@
         </p>
       </footer>
     </div><!-- /.container -->
+      
+</div><!-- /.container -->
 
     <!-- Le javascript
     ================================================== -->
