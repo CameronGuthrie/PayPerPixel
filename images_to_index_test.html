@@ -1,0 +1,270 @@
+
+
+<!-- JSON OBJECT -->
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+    	<title> Image Overlay &middot; TEST PAGE</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="in development">
+    	<meta name="author" content="Cameron Guthrie">
+
+	    <!-- Le styles -->
+	    <link href="css/bootstrap.css" rel="stylesheet">
+	    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+	    <!-- Le random script for mouseover -->
+	    <script type="text/javascript" src="http://code.jquery.com/jquery-git.js"></script>
+
+		<style>
+
+			/* Style for hero-unit grid and grid tooltip (taken from index.html so don't mess with it)
+			===================================================== */
+
+			.hero-unit {
+			    padding: 19px 29px 29px;
+			    margin: 0 auto 20px;
+			    background-color: #fff;
+			    border: 1px solid #e5e5e5;
+			    -webkit-border-radius: 5px;
+			       -moz-border-radius: 5px;
+			            border-radius: 5px;
+			    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			}
+
+			.grid {
+		        margin: 0px auto auto;
+		        border: 1px solid #000;
+		        border-width: 0 1px 1px 0;
+		        background-color: #28ACF9;
+		    }
+
+		    .grid div {
+		        border: 1px solid #000;
+		        border-width: 1px 0 0 1px;
+		        float: left;
+		    }
+
+		    .gridprime {
+		        margin-top: 50px ;
+		        margin-left: 50px;
+		        border: 1px solid #000;
+		        background-color: #FFFF33;
+		        float: left;
+		    }
+
+		    #tooltip { 
+		        text-align:center; 
+		        background:black; 
+		        color:white; 
+		        padding:3px 0; 
+		        width:150px; 
+		        position:fixed; 
+		        display:none; 
+		        white-space:nowrap;
+		        z-index:3; 
+		    }
+
+	        /* =====================================================
+	        end of style from index.html */
+
+			/* Style for image tooltip */
+
+	        #imagetooltip { 
+		        text-align:left; 
+		        background:#CCC; 
+		        color:white; 
+		        padding:3px 0; 
+		        width:200px; 
+		        position:fixed; 
+		        display:none; 
+		        white-space:nowrap;
+		        z-index:4; 
+	        }
+
+		</style>
+
+		<!-- Mouseover script for grid tooltip (taken from index.html)
+		=================================== -->
+		<script type="text/javascript">
+		  
+		  $(window).load(function(){
+		    var tooltip = $( '<div id="tooltip">' ).appendTo( 'body' )[0];
+		    
+		    $( '.coords' ).    
+		    each(function () {       
+		      
+		        var pos = $( this ).offset(),
+			        top = pos.top,           
+			        left = pos.left,          
+			        width = $( this ).width(),  
+			        height = $( this ).height();       
+		                    
+                $( this ).
+                    mousemove(function ( e ) {
+                    var x =  ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) .toFixed( 0 ),
+                        y =  ( ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
+
+		            if ( x > 49 && x < 951 && y > 49 && y < 651) {
+		                $( tooltip ).text( 'prime | ' + x + ', ' + y ).css({                    
+		                    left: e.clientX + 20,                    
+		                    top: e.clientY + 10                
+		                }).show();
+		            }
+
+		            else {
+	                    $( tooltip ).text( 'standard | ' + x + ', ' + y ).css({                    
+	                        left: e.clientX + 20,                    
+	                        top: e.clientY + 10                
+	                    }).show();
+		 
+		            }
+
+		        }).         
+
+		        mouseleave(function () {                
+		            $( tooltip ).hide();            
+		        });     
+		    });    
+		});
+
+		</script>
+
+		<!-- ==================================
+		End of mouseover script from index.html -->
+
+
+		<!-- Mouseover script for image tooltip -->
+
+		<script type="text/javascript">
+
+		  $(window).load(function(){
+		    var imagetooltip = $( '<div id="imagetooltip">' ).appendTo( 'body' )[0];
+		    
+		    $( '.image-tooltip' ).    
+		    each(function () {      
+
+		      $( imagetooltip ).text( pic[pk].title + ' , ' + pic[pk].link ).css({                    
+		                              left: e.clientX + 20,                    
+		                              top: e.clientY + 10                
+		                            }).show();
+		       
+
+
+		                          }).            
+		                          mouseleave(function () {                
+		                             $( tooltip ).hide();            
+		                          });     
+		    });    
+		  });
+
+		</script>
+
+
+	</head>
+
+	<!-- BODY STARTS HERE -->
+
+	<body>
+
+		<!-- Grid script from index.html (don't fuck with this)
+		==================== -->
+
+        <script type="text/javascript">
+
+            function creategrid(size){
+
+	        	var primeW = Math.floor((900) / size),
+	                primeH = Math.floor((600) / size),
+	                standardW = Math.floor((1000) / size),
+	                standardH = Math.floor((1000) / size);
+
+		        var standard = document.createElement('div');
+		            standard.className = 'grid coords';
+		            standard.style.width = (standardW * size) + 'px';
+		            standard.style.height = (standardH * size) + 'px';
+
+                var prime = document.createElement('div');
+	                prime.className = 'gridprime';
+	                prime.style.width = (primeW * size) + 'px';
+	                prime.style.height = (primeH * size)+ 'px';
+	                prime.style.position = 'absolute'
+	                prime.style.zIndex= '1';
+	                standard.appendChild(prime);
+
+	            for (var i = 0; i < standardH; i++) {
+
+	                for (var p = 0; p < standardW; p++) {
+
+	                    var cell = document.createElement('div');
+	                        cell.style.height = (size - 1) + 'px';
+	                        cell.style.width = (size - 1) + 'px';
+	                        cell.style.position = 'relative'
+	                        cell.style.zIndex= '2';
+	                        standard.appendChild(cell);
+               
+                }
+
+            }
+
+            document.body.appendChild(standard);
+
+        }
+
+        creategrid(10);
+
+        </script>
+
+		<!-- ===================
+		end of grid script -->
+
+		<!-- Script for looping images out of database (completely broken) -->
+
+		<script>
+
+			function CreateImages{
+
+				var picture = document.createElement('img');
+				{
+
+				pk=1
+
+					for var (pic=0; pic = pic[pk].pk; pic++)
+						
+					{	"pk": 1,
+						"model": "payperpixel.advert",
+						"fields": {
+						"title": "Test Advert",
+						"timestamp": "2013-01-22T20:49:59.430Z",
+						"image": "ads/ppp_logo.jpeg",
+						"height": 30,
+						"width": 30,
+						"link": "http://example.com",
+						"board": 1,
+						"posx": 100,
+						"posy": 50,
+						"owner": 4,
+						"region": 1
+
+						picture.style.margin-top = pic[pk].posy;
+						picture.style.margin-left = pic[pk].posx;
+						picture.classname = 'image-tooltip';
+						picture.src = pic[pk].pic[pk].image;
+						picture.style.height = pic[pk].height;
+						picture.style.width = pic[pk].width;
+
+						document.grid.appendChild(picture);
+					}
+
+				}
+			};
+
+		</script>
+
+</body>
+
+</html>
