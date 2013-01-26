@@ -5,8 +5,9 @@
 
 	<head>
 
-		<meta charset="utf-8">
     	<title> Image Overlay &middot; TEST PAGE</title>
+
+    	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<meta name="description" content="in development">
     	<meta name="author" content="Cameron Guthrie">
@@ -92,45 +93,47 @@
 		=================================== -->
 		<script type="text/javascript">
 		  
-		  $(window).load(function(){
-		    var tooltip = $( '<div id="tooltip">' ).appendTo( 'body' )[0];
+		  	$(window).load(function(){
+		    	var tooltip = $( '<div id="tooltip">' ).appendTo( 'body' )[0];
 		    
-		    $( '.coords' ).    
-		    each(function () {       
-		      
-		        var pos = $( this ).offset(),
-			        top = pos.top,           
-			        left = pos.left,          
-			        width = $( this ).width(),  
-			        height = $( this ).height();       
-		                    
-                $( this ).
-                    mousemove(function ( e ) {
-                    var x =  ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) .toFixed( 0 ),
-                        y =  ( ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
+				    $( '.coords' ).    
+				    each(function () {       
+				      
+				        var pos = $( this ).offset(),
+					        top = pos.top,           
+					        left = pos.left,          
+					        width = $( this ).width(),  
+					        height = $( this ).height();       
+				                    
+		                $( this ).
+		                    mousemove(function ( e ) {
+		                    var x =  ( (e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft) - left ) .toFixed( 0 ),
+		                        y =  ( ( (e.clientY + document.body.scrollTop + document.documentElement.scrollTop) - top ) ) .toFixed( 0 );
 
-		            if ( x > 49 && x < 951 && y > 49 && y < 651) {
-		                $( tooltip ).text( 'prime | ' + x + ', ' + y ).css({                    
-		                    left: e.clientX + 20,                    
-		                    top: e.clientY + 10                
-		                }).show();
-		            }
+				            if ( x > 49 && x < 951 && y > 49 && y < 651) {
+				                $( tooltip ).text( 'prime | ' + x + ', ' + y ).css({                    
+				                    left: e.clientX + 20,                    
+				                    top: e.clientY + 10                
+				                }).show();
+				            }
 
-		            else {
-	                    $( tooltip ).text( 'standard | ' + x + ', ' + y ).css({                    
-	                        left: e.clientX + 20,                    
-	                        top: e.clientY + 10                
-	                    }).show();
-		 
-		            }
+				            else {
+			                    $( tooltip ).text( 'standard | ' + x + ', ' + y ).css({                    
+			                        left: e.clientX + 20,                    
+			                        top: e.clientY + 10                
+			                    }).show();
+				 
+				            }
 
-		        }).         
+				        }).         
 
-		        mouseleave(function () {                
-		            $( tooltip ).hide();            
-		        });     
-		    });    
-		});
+				        mouseleave(function () {                
+				            $( tooltip ).hide();            
+				        });    
+
+				    });    
+
+			});
 
 		</script>
 
@@ -142,25 +145,25 @@
 
 		<script type="text/javascript">
 
-		  $(window).load(function(){
-		    var imagetooltip = $( '<div id="imagetooltip">' ).appendTo( 'body' )[0];
+		  	$(window).load(function(){
+		    	var imagetooltip = $( '<div id="imagetooltip">' ).appendTo( 'body' )[0];
 		    
-		    $( '.image-tooltip' ).    
-		    each(function () {      
+			    $( '.image-tooltip' ).    
+				    each(function () {      
 
-		      $( imagetooltip ).text( pic[pk].title + ' , ' + pic[pk].link ).css({                    
-		                              left: e.clientX + 20,                    
-		                              top: e.clientY + 10                
-		                            }).show();
-		       
+				        $( imagetooltip ).text( data.fields.title + ' , ' + data.fields.link ).css({                    
+				            left: e.clientX + 20,                    
+				            top: e.clientY + 10                
+				        }).show();
+				       
 
 
-		                          }).            
-		                          mouseleave(function () {                
-		                             $( tooltip ).hide();            
-		                          });     
-		    });    
-		  });
+				                                      
+				        mouseleave(function () {                
+				            $( tooltip ).hide();            
+				        });     
+			        });    
+		  	});
 
 		</script>
 
@@ -169,7 +172,7 @@
 
 	<!-- BODY STARTS HERE -->
 
-	<body>
+	<body id="1">
 
 		<!-- Grid script from index.html (don't fuck with this)
 		==================== -->
@@ -187,6 +190,7 @@
 		            standard.className = 'grid coords';
 		            standard.style.width = (standardW * size) + 'px';
 		            standard.style.height = (standardH * size) + 'px';
+		            standard.board = '1';
 
                 var prime = document.createElement('div');
 	                prime.className = 'gridprime';
@@ -223,48 +227,51 @@
 		end of grid script -->
 
 		<!-- Script for looping images out of database (completely broken) -->
+<script>
+		//SCRIPT TO LOOP IMAGES OUT OF DATABASE (USING 1 TO TEST FOR NOW)//
+		function createImages() {
 
-		<script>
+		    for (var pic = 0; pic < 100; pic++) {
+		         /* new image for each pass of loop*/
+		        var picture = document.createElement('img');
+		        var data = {
+		            pk: 1,
+		            model: 'image',
+		            fields: {
+		                title: 'Image Test',
+		                timestamp: '2013-01-01T00:00:00.000Z',
+		                image: 'http://i240.photobucket.com/albums/ff301/quyenhiepkhach/CAT.jpg',
+		                height: 30 + 'px',
+		                width: 30 + 'px',
+		                link: '#ImageLink',
+		                board: 1,
+		                posx: 100 + 'px',
+		                posy: 50 + 'px',
+		                owner: 1,
+		                region: 1
+		            }
+		        };
 
-			function CreateImages{
+		        picture.className = 'image-tooltip';
+		        picture.src = data.fields.image;
+		        picture.style.marginTop = data.fields.posy;
+		        picture.style.marginLeft = data.fields.posx;
+		        picture.style.height = data.fields.height;
+		        picture.style.width = data.fields.width;
+		       /* comment out "if" since isn't true*/
+		       // if (data.fields.board ==document.body.id) {
+		            document.body.appendChild(picture);
+		       // }
 
-				var picture = document.createElement('img');
-				{
+		    }
 
-				pk=1
+		}
 
-					for var (pic=0; pic = pic[pk].pk; pic++)
-						
-					{	"pk": 1,
-						"model": "payperpixel.advert",
-						"fields": {
-						"title": "Test Advert",
-						"timestamp": "2013-01-22T20:49:59.430Z",
-						"image": "ads/ppp_logo.jpeg",
-						"height": 30,
-						"width": 30,
-						"link": "http://example.com",
-						"board": 1,
-						"posx": 100,
-						"posy": 50,
-						"owner": 4,
-						"region": 1
 
-						picture.style.margin-top = pic[pk].posy;
-						picture.style.margin-left = pic[pk].posx;
-						picture.classname = 'image-tooltip';
-						picture.src = pic[pk].pic[pk].image;
-						picture.style.height = pic[pk].height;
-						picture.style.width = pic[pk].width;
+		createImages();
 
-						document.grid.appendChild(picture);
-					}
+</script>
 
-				}
-			};
-
-		</script>
-
-</body>
+	</body>
 
 </html>
