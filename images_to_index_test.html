@@ -39,21 +39,21 @@
 
 			.grid {
 		        margin: 0px auto auto;
-		        border: 1px solid #000;
+		        border: 1px solid #CCC;
 		        border-width: 0 1px 1px 0;
 		        background-color: #28ACF9;
 		    }
 
 		    .grid div {
-		        border: 1px solid #000;
+		        border: 1px solid #CCC;
 		        border-width: 1px 0 0 1px;
 		        float: left;
 		    }
 
 		    .gridprime {
-		        margin-top: 50px ;
-		        margin-left: 50px;
-		        border: 1px solid #000;
+		        top: 50px ;
+		        left: 50px;
+		        border: 1px solid #CCC;
 		        background-color: #FFFF33;
 		        float: left;
 		    }
@@ -141,7 +141,7 @@
 		End of mouseover script from index.html -->
 
 
-		<!-- Mouseover script for image tooltip -->
+		<!-- 
 
 		<script type="text/javascript">
 
@@ -164,7 +164,7 @@
 
 		  	});
 
-		</script>
+		</script>  Mouseover script for image tooltip -->
 
 
 	</head>
@@ -228,8 +228,8 @@
 			                width: 30 + 'px',
 			                link: '#ImageLink',
 			                board: 1,
-			                posx: 0 + 'px',
-			                posy: 0 + 'px',
+			                posx: 40 + 'px',
+			                posy: 40 + 'px',
 			                owner: 1,
 			                region: 1
 			            }
@@ -237,14 +237,12 @@
 
 			        picture.className = 'image-tooltip';
 			        picture.src = data.fields.image;
-			        picture.style.marginTop = data.fields.posy;
-			        picture.style.marginLeft = data.fields.posx;
 			        picture.style.height = data.fields.height;
 			        picture.style.width = data.fields.width;
 			        picture.style.position = 'absolute';
 			        picture.style.top = data.fields.posy;
 			        picture.style.left = data.fields.posx;
-			        picture.style.zIndex = '1';
+			        picture.style.zIndex = '2';
 
 			        /* comment out "if" since isn't true*/
 			        if (data.fields.board == document.body.id) {
